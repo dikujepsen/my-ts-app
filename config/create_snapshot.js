@@ -8,14 +8,14 @@ var config = {
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    modules: [path.resolve(__dirname), 'node_modules', 'app'],
+    modules: [path.resolve(__dirname), 'node_modules', 'src'],
   },
 
-  entry: './scripts/create_snapshot.tsx',
+  entry: './src/scripts/create_snapshot.tsx',
 
   output: {
     path: path.resolve('./build'),
-    filename: './server.js',
+    filename: './create_snapshot.js',
   },
 
   module: {

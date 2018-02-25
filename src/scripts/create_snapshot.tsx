@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 
-import { AuthorPage } from '../src/component/Author';
+import { AuthorPage } from '../component/Author';
 
 console.log("FRIST");
 
