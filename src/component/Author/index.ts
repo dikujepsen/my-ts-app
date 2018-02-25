@@ -1,4 +1,4 @@
-import {AuthorForm} from "./AuthorForm"
-import {AuthorPage} from "./AuthorPage"
+import { AuthorForm } from "./AuthorForm";
+import { AuthorPage } from "./AuthorPage";
 
 export { AuthorForm, AuthorPage };
