@@ -1,12 +1,16 @@
-import * as React from 'react';
-// import * as ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+
+import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { render } from 'react-snapshot';
-import {AuthorPage} from "./component/Author";
 
+import App from './App';
+import { AuthorPage } from './component/Author';
+import registerServiceWorker from './registerServiceWorker';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+// import * as ReactDOM from 'react-dom';
 render(
     <BrowserRouter>
         <Switch>

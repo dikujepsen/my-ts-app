@@ -1,8 +1,9 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
-import {observer} from 'mobx-react';
-import {IAuthor} from "../../interface";
-import {AuthorForm} from ".";
 
+import { AuthorForm } from '.';
+import { IAuthor } from '../../interface';
+import { Helmet } from "react-helmet";
 
 @observer
 class AuthorPage extends React.Component<any, any> {
@@ -22,15 +23,23 @@ class AuthorPage extends React.Component<any, any> {
     }
 
     render() {
-        const author: IAuthor = {firstName: "Jens", lastName: "Hansen"};
-        const errors: IAuthor = {firstName: "", lastName: ""};
+        const author: IAuthor = { firstName: "Jens", lastName: "Hansen" };
+        const errors: IAuthor = { firstName: "", lastName: "" };
         return (
-
             <div>
-                <AuthorForm author={author} onSave={this.handleSaveClick} onChange={this.handleChange} saving={false} errors={errors}/>
+                <Helmet> 
+                    <title>Authors</title>
+                </Helmet>
+                    <AuthorForm
+                        author={author}
+                        onSave={this.handleSaveClick}
+                        onChange={this.handleChange}
+                        saving={false}
+                        errors={errors}
+                    />
             </div>
         );
     }
 }
 
-export {AuthorPage};
+export { AuthorPage };
