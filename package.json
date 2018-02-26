@@ -50,7 +50,8 @@
     "test": "node scripts/test.js --env=jsdom",
     "snapshot": "react-snapshot",
     "fixlint": "tslint --fix \"src/**/*{.ts,.tsx}\"",
-    "create_snapshot": "webpack --config config/create_snapshot.js"
+    "create_snapshot": "webpack --config config/create_snapshot.config.js",
+    "create_snapshot_watch": "npm run-script create_snapshot -- --watch"
   },
   "devDependencies": {
     "@types/jest": "^22.1.3",

@@ -12,4 +12,6 @@ const helmet = Helmet.renderStatic();
 
 console.log("HERE");
 
+console.log(renderedComponent);
+
 

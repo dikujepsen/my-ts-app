@@ -24,32 +24,14 @@ var config = {
         loader: 'url-loader?limit=1000&name=images/[hash].[ext]'
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.jsx$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.css$/,
-        loaders: [
-          'isomorphic-style-loader',
-          'css-loader'
-        ]
       }
     ]
   },
