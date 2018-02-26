@@ -8,7 +8,7 @@ var config = {
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    modules: [path.resolve(__dirname), 'node_modules', 'src'],
+    modules: [path.resolve(__dirname), 'node_modules', 'src']
   },
 
   entry: './src/scripts/create_snapshot.tsx',
@@ -32,6 +32,14 @@ var config = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loaders: 'ignore-loader'
+      },
+      {
+        test: /\.svg(\?.*)?$/,
+        loader: 'ignore-loader'
       }
     ]
   },

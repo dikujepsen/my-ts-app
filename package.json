@@ -58,6 +58,7 @@
     "@types/node": "^9.4.6",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
+    "ignore-loader": "^0.1.2",
     "typescript": "^2.7.2"
   },
   "jest": {
