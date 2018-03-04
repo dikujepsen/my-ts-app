@@ -9,6 +9,7 @@ class LoadingDots extends React.Component<any, any> {
     interval: number;
     state: { frame: number };
 
+
     constructor(props: any) {
         super(props);
         this.state = { frame: 1 };
