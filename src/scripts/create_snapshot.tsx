@@ -4,13 +4,13 @@ import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { Helmet } from 'react-helmet';
 
-import { AuthorPage } from '../component/Author';
-import { RouterSwitch } from '../component/RouterSwitch';
+import { AuthorPage } from 'component/Author';
+import { RouterSwitch } from 'component/RouterSwitch';
 // import { match } from 'react-router';
 import { matchPath } from 'react-router-dom';
 // import { App } from '../component/App';
-import { App } from 'component/App';
-console.log("FRIST");
+import { ReactApp } from 'component/App';
+
 
 const context = {};
 
@@ -30,7 +30,7 @@ const routes = [
     },
     {
         path: '/',
-        component: App
+        component: ReactApp
     }
 ];
 
@@ -52,9 +52,5 @@ const renderedComponent = ReactDOMServer.renderToString(
 );
 
 const helmet = Helmet.renderStatic();
-
-console.log("HERE");
-
-// console.log(renderedComponent);
 
 

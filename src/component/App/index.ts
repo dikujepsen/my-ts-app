@@ -1,3 +1,3 @@
-import { App } from "./App";
+import { ReactApp } from "./ReactApp";
 
-export { App };
+export { ReactApp };
