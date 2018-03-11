@@ -29,7 +29,7 @@ export class AuthorForm extends React.Component<IAuthorFormProps, any> {
 
             <form>
                 <h1>
-                    Manage Course <i className="glyphicon glyphicon-plus"/>
+                    Manage Author <i className="glyphicon glyphicon-plus"/>
                 </h1>
                 <TextInput
                     name="firstName"

@@ -18,13 +18,24 @@ describe("test suite 1", () => {
 
   });
 
-  it('rendered the test first name', () => {
+  it('rendered a line with data', () => {
     const context = { router: { isActive: (a: any, b: any) => true } };
 
     const wrapper = mountWithRouter(<AuthorPage />);
 
     expect(wrapper.text()).toContain('Jens');
   });
+
+ 
+  // it('rendered the test first name', () => {
+  //   const context = { router: { isActive: (a: any, b: any) => true } };
+
+  //   const wrapper = mountWithRouter(<AuthorPage />);
+
+  //   expect(wrapper.find("[name='firstName']").first().props().value).toContain('Jens');
+  // });
+
+
 
 });
 

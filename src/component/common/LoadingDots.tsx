@@ -35,7 +35,7 @@ class LoadingDots extends React.Component<any, any> {
         }
         return (
             <span >{text}&nbsp;</span>
-        )
+        );
     }
 
 

@@ -6,6 +6,7 @@ import { IAuthor } from '../../interface';
 import { Helmet } from "react-helmet";
 import { AuthorList } from './AuthorList';
 import { NavLink } from 'react-router-dom';
+import { Route } from 'react-router';
 
 @observer
 class AuthorPage extends React.Component<any, any> {
@@ -31,26 +32,23 @@ class AuthorPage extends React.Component<any, any> {
     render() {
         const author: IAuthor = { firstName: "Jens", lastName: "Hansen", id: 1 };
         const errors: IAuthor = { firstName: "", lastName: "", id: -1 };
-        const authorStore = {items: [author]};
+        const authorStore = { items: [author] };
         return (
             <div>
                 <Helmet>
                     <title>Authors</title>
                 </Helmet>
                 <h1>Authors</h1>
-               <NavLink to="/CourseApp/authors/add" className="btn btn-primary">Add Author</NavLink>
+                
+                <NavLink to="/CourseApp/authors/add" className="btn btn-primary">Add Author</NavLink>
 
                 <AuthorList
                     authorStore={authorStore}
                     handleDelete={this.deleteAuthor}
                 />
-                {/* <AuthorForm
-                        author={author}
-                        onSave={this.handleSaveClick}
-                        onChange={this.handleChange}
-                        saving={false}
-                        errors={errors}
-                    /> */}
+                    
+                
+                
             </div>
         );
     }
