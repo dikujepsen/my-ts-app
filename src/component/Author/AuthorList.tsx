@@ -46,4 +46,4 @@ class AuthorList extends React.Component<IAuthorListRowProps, any> {
   }
 }
 
-export default AuthorList;
+export { AuthorList };

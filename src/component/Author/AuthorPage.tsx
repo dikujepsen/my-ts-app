@@ -4,7 +4,7 @@ import * as React from 'react';
 import { AuthorForm } from '.';
 import { IAuthor } from '../../interface';
 import { Helmet } from "react-helmet";
-import AuthorList from './AuthorList';
+import { AuthorList } from './AuthorList';
 import { NavLink } from 'react-router-dom';
 
 @observer

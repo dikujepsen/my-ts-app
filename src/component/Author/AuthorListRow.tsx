@@ -24,9 +24,11 @@ class AuthorListRow extends React.Component<IAuthorListRowProps, any> {
             className="btn btn-primary"
           >
             Delete
-            </button>
+          </button>
         </td>
-        <td><NavLink to={'/authors/' + author.id}>Edit author </NavLink></td>
+        <td>
+          <NavLink to={'/authors/' + author.id}>Edit author </NavLink>
+        </td>
         <td>{author.firstName}</td>
         <td>{author.lastName}</td>
       </tr>
