@@ -51,7 +51,8 @@
     "snapshot": "react-snapshot",
     "fixlint": "tslint --fix \"src/**/*{.ts,.tsx}\"",
     "create_snapshot": "webpack --config config/create_snapshot.config.js",
-    "create_snapshot_watch": "npm run-script create_snapshot -- --watch"
+    "create_snapshot_watch": "npm run-script create_snapshot -- --watch",
+    "jest_test": "jest --watch --env=jsdom"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.9",
