@@ -1,7 +1,17 @@
+import { Author } from "interface";
+
+
+
+
+let authors: Array<Author> = [
+  new Author(1, "Jens", "Hansen")
+]
 
 class MockAuthorApi {
-  constructor() {
+  constructor() {}
 
+  public getAll = () => {
+    return authors;
   }
 }
 

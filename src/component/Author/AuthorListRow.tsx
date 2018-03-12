@@ -3,10 +3,10 @@
  */
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { IAuthor } from 'interface';
+import { Author } from 'interface';
 
 interface IAuthorListRowProps {
-  author: IAuthor;
+  author: Author;
   handleDelete: (event: any) => void;
 }
 

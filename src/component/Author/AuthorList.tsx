@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { AuthorListRow } from './AuthorListRow';
 import { observer, inject } from "mobx-react";
-import { IAuthor } from 'interface';
+import { Author } from 'interface';
 
 interface IAuthorListRowProps {
-  authorStore: {items: Array<IAuthor>};
+  authorStore: {items: Array<Author>};
   handleDelete: (event: any) => void;
 }
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Header } from 'component/common';
 import { Route, withRouter, RouteComponentProps } from 'react-router';
 import { AuthorPage, AuthorForm } from 'component/Author';
-import { IAuthor } from 'interface';
+import { Author } from 'interface';
 
 interface ICourseAppProps {
   match: { url: string };
@@ -24,8 +24,8 @@ class CourseApp extends React.Component<ICourseAppProps & RouteComponentProps<an
   render() {
     const { match } = this.props;
 
-    const author: IAuthor = { firstName: "Jens", lastName: "Hansen", id: 1 };
-    const errors: IAuthor = { firstName: "", lastName: "", id: -1 };
+    const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
+    const errors: Author = { firstName: "", lastName: "", id: -1 };
     return (
       <div className="container-fluid">
         <Header

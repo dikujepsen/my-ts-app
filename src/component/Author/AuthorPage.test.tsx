@@ -4,7 +4,7 @@ import { shallow, configure, render, mount } from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
 import { Helmet } from 'react-helmet';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { IAuthor } from 'interface';
+import { Author } from 'interface';
 
 const mountWithRouter = (node: React.ReactElement<any>) => mount(<Router>{node}</Router>);
 
@@ -28,8 +28,8 @@ describe("test suite 1", () => {
 
  
   it('rendered the test first name', () => {
-    const author: IAuthor = { firstName: "Jens", lastName: "Hansen", id: 1 };
-    const errors: IAuthor = { firstName: "", lastName: "", id: -1 };
+    const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
+    const errors: Author = { firstName: "", lastName: "", id: -1 };
 
     const wrapper = mount(
       <AuthorForm 

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 
 import { AuthorForm } from '.';
-import { IAuthor } from '../../interface';
+import { Author } from '../../interface';
 import { Helmet } from "react-helmet";
 import { AuthorList } from './AuthorList';
 import { NavLink } from 'react-router-dom';
@@ -30,8 +30,8 @@ class AuthorPage extends React.Component<any, any> {
     }
 
     render() {
-        const author: IAuthor = { firstName: "Jens", lastName: "Hansen", id: 1 };
-        const errors: IAuthor = { firstName: "", lastName: "", id: -1 };
+        const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
+        const errors: Author = { firstName: "", lastName: "", id: -1 };
         const authorStore = { items: [author] };
         return (
             <div>

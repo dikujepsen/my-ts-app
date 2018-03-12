@@ -1,14 +1,14 @@
 import * as React from 'react';
 import TextInput from '../common/TextInput';
 import {observer} from 'mobx-react';
-import {IAuthor} from "../../interface";
+import {Author} from "../../interface";
 
 interface IAuthorFormProps {
-    author: IAuthor;
+    author: Author;
     onSave: (event: any) => void;
     onChange: (event: any) => void;
     saving: boolean;
-    errors: IAuthor;
+    errors: Author;
 }
 
 @observer
