@@ -46,8 +46,6 @@ class AuthorPage extends React.Component<any, any> {
                     authorStore={authorStore}
                     handleDelete={this.deleteAuthor}
                 />
-                    
-                
                 
             </div>
         );
