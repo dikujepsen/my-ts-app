@@ -1,11 +1,12 @@
-import {observable, action, computed} from "mobx";
-import authorApi from '../api/authorApi';
-import {BaseStore} from './BaseStore';
+import { observable, action, computed } from "mobx";
+import { MockAuthorApi } from 'api/MockAuthorApi';
+import { BaseStore } from './BaseStore';
 
+const authorApi = new MockAuthorApi();
 
 export default class AuthorStore extends BaseStore {
   constructor() {
-    super(authorApi, {firstName: '', lastName: ''});
+    super(authorApi, { firstName: '', lastName: '' });
   }
 
   @computed

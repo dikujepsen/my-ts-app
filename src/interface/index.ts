@@ -1,3 +1,3 @@
-import { Author } from "./Author/IAuthor"
+import { Author } from "./Author/Author";
 
 export { Author };

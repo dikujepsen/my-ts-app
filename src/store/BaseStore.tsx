@@ -1,5 +1,5 @@
 import { observable, action, computed } from "mobx";
-import toastr from 'toastr';
+import * as toastr from 'toastr';
 
 const DELETE_FAILED = 'DELETE_FAILED';
 
