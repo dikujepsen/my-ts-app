@@ -5,14 +5,17 @@ import { Author } from "interface";
 
 let authors: Array<Author> = [
   new Author(1, "Jens", "Hansen")
-]
+];
+
+let authorsResults: {results: Array<Author>} = {
+  results: authors
+};
 
 class MockAuthorApi {
-  constructor() {}
 
   public getAll = () => {
-    return authors;
+    return Promise.resolve(authorsResults);
   }
 }
 
-export {MockAuthorApi};
+export { MockAuthorApi };

@@ -8,7 +8,7 @@ interface IAuthorListRowProps {
   handleDelete: (event: any) => void;
 }
 
-
+@observer
 class AuthorList extends React.Component<IAuthorListRowProps, any> {
   render() {
     const { authorStore, handleDelete } = this.props;
@@ -33,7 +33,7 @@ class AuthorList extends React.Component<IAuthorListRowProps, any> {
           </tr>
         </thead>
         <tbody>
-          {authorStore.items.map(author =>
+          {authorStore.items && authorStore.items.map(author =>
             <AuthorListRow
               key={author.id}
               author={author}

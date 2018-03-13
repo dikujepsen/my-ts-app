@@ -7,6 +7,12 @@ import { Helmet } from "react-helmet";
 import { AuthorList } from './AuthorList';
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router';
+import { AuthorStore } from 'store';
+
+
+const authorStore = new AuthorStore();
+authorStore.setItems();
+
 
 @observer
 class AuthorPage extends React.Component<any, any> {
@@ -32,7 +38,6 @@ class AuthorPage extends React.Component<any, any> {
     render() {
         const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
         const errors: Author = { firstName: "", lastName: "", id: -1 };
-        const authorStore = { items: [author] };
         return (
             <div>
                 <Helmet>

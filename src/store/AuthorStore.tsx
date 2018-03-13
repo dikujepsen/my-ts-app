@@ -4,7 +4,7 @@ import { BaseStore } from './BaseStore';
 
 const authorApi = new MockAuthorApi();
 
-export default class AuthorStore extends BaseStore {
+class AuthorStore extends BaseStore {
   constructor() {
     super(authorApi, { firstName: '', lastName: '' });
   }
@@ -20,3 +20,5 @@ export default class AuthorStore extends BaseStore {
     return authorsFormattedForDropdown;
   }
 }
+
+export { AuthorStore };

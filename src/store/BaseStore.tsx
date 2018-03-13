@@ -13,7 +13,6 @@ class BaseStore {
     constructor(api: any, defaultItem: any) {
         this.api = api;
         this.defaultItem = defaultItem;
-        this.setItems();
     }
 
     @action
