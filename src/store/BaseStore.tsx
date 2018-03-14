@@ -67,7 +67,7 @@ class BaseStore {
 
     @action
     deleteItem(itemId: number) {
-        let item = this.items.filter(item => item.id === itemId)[0];
+        let item = this.items.filter(element => element.id === itemId)[0];
 
         this.api.delete(item)
             .then((success: any) => {

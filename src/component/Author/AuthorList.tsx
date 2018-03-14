@@ -5,11 +5,14 @@ import { Author } from 'interface';
 
 interface IAuthorListRowProps {
   authorStore: {items: Array<Author>};
-  handleDelete: (event: any) => void;
+  handleDelete: (item: Author) => void;
 }
 
 @observer
 class AuthorList extends React.Component<IAuthorListRowProps, any> {
+
+
+
   render() {
     const { authorStore, handleDelete } = this.props;
 

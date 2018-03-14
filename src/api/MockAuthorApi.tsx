@@ -30,6 +30,10 @@ class MockAuthorApi {
     return Promise.resolve(item);
   }
 
+  public delete = (item: any) => {
+    authors = authors.filter(element => element.id !== item.id);
+    return Promise.resolve(true);
+  }
 
 }
 

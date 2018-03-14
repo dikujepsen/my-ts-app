@@ -7,19 +7,26 @@ import { Author } from 'interface';
 
 interface IAuthorListRowProps {
   author: Author;
-  handleDelete: (event: any) => void;
+  handleDelete: (item: Author) => void;
 }
 
 class AuthorListRow extends React.Component<IAuthorListRowProps, any> {
+
+  handleDelete = (event: any) => {
+    const { handleDelete, author } = this.props;
+    event.preventDefault();
+    handleDelete(author);
+  }
+
   render() {
-    const { author, handleDelete } = this.props;
+    const { author} = this.props;
 
     return (
       <tr>
         <td>
           <button
             type="button"
-            onClick={handleDelete}
+            onClick={this.handleDelete}
             data-id={author.id}
             className="btn btn-primary"
           >

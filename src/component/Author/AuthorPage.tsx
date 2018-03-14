@@ -29,8 +29,8 @@ class AuthorPage extends React.Component<any, any> {
 
     }
 
-    deleteAuthor = (event: any) => {
-        event.preventDefault();
+    deleteAuthor = (item: Author) => {
+        authorStore.deleteItem(item.id);
     }
 
     render() {
