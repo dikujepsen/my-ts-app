@@ -26,27 +26,29 @@ class CourseApp extends React.Component<ICourseAppProps & RouteComponentProps<an
   render() {
     const { match } = this.props;
 
-    const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
-    const errors: Author = { firstName: "", lastName: "", id: -1 };
+    // const author: Author = { firstName: "Jens", lastName: "Hansen", id: 1 };
+    // const errors: Author = { firstName: "", lastName: "", id: -1 };
     return (
       <div className="container-fluid">
         <Header
           loading={false}
         />
-        <Route path={`${match.url}/authors`} component={AuthorPage} exact={true} />
+
         <Switch>
+          <Route path={`${match.url}/authors`} component={AuthorPage} exact={true} />
           <Route
             path={`${match.url}/authors/add`}
             exact={true}
-            render={() => (
-              <AuthorForm
-                author={author}
-                onSave={this.handleSaveClick}
-                onChange={this.handleChange}
-                saving={false}
-                errors={errors}
-              />
-            )}
+            component={ManageAuthorPage}
+            // render={() => (
+            //   <AuthorForm
+            //     author={author}
+            //     onSave={this.handleSaveClick}
+            //     onChange={this.handleChange}
+            //     saving={false}
+            //     errors={errors}
+            //   />
+            // )}
           />
 
           <Route
