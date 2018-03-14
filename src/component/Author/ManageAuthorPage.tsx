@@ -3,6 +3,7 @@ import { AuthorForm } from './AuthorForm';
 import * as toastr from 'toastr';
 import { observer, inject } from "mobx-react";
 import { authorStore } from 'store';
+import Helmet from 'react-helmet';
 
 
 @observer
@@ -27,7 +28,7 @@ class ManageAuthorPage extends React.Component<any, any> {
         }
     }
 
-    updateAuthorState  = (event: any) => {
+    updateAuthorState = (event: any) => {
         authorStore.changeItem(event);
     }
 
@@ -65,18 +66,23 @@ class ManageAuthorPage extends React.Component<any, any> {
     redirect() {
         this.setState({ saving: false });
         toastr.success('Author saved');
-        this.context.router.push('/authors');
+        this.props.history.push('/CourseApp/authors');
     }
 
     render() {
         return (
-            <AuthorForm
-                onChange={this.updateAuthorState}
-                onSave={this.saveAuthor}
-                author={authorStore.item}
-                errors={this.state.errors}
-                saving={this.state.saving}
-            />
+            <>
+                <Helmet>
+                    <title>Manage Authors</title>
+                </Helmet>
+                <AuthorForm
+                    onChange={this.updateAuthorState}
+                    onSave={this.saveAuthor}
+                    author={authorStore.item}
+                    errors={this.state.errors}
+                    saving={this.state.saving}
+                />
+            </>
         );
     }
 

@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Header } from 'component/common';
-import { Route, withRouter, RouteComponentProps } from 'react-router';
+import { Route, withRouter, RouteComponentProps, Switch } from 'react-router';
 import { AuthorPage, AuthorForm, ManageAuthorPage } from 'component/Author';
 import { Author } from 'interface';
+
+import '../../../../node_modules/toastr/build/toastr.min.css';
 
 interface ICourseAppProps {
   match: { url: string };
@@ -32,24 +34,27 @@ class CourseApp extends React.Component<ICourseAppProps & RouteComponentProps<an
           loading={false}
         />
         <Route path={`${match.url}/authors`} component={AuthorPage} exact={true} />
-        <Route 
-          path={`${match.url}/authors/add`} 
-          render={() => (
-            <AuthorForm
-              author={author}
-              onSave={this.handleSaveClick}
-              onChange={this.handleChange}
-              saving={false}
-              errors={errors}
-            />
-          )}
-        />
+        <Switch>
+          <Route
+            path={`${match.url}/authors/add`}
+            exact={true}
+            render={() => (
+              <AuthorForm
+                author={author}
+                onSave={this.handleSaveClick}
+                onChange={this.handleChange}
+                saving={false}
+                errors={errors}
+              />
+            )}
+          />
 
-        <Route 
-          path={`${match.url}/authors/:id`} 
-          exact={true}
-          component={ManageAuthorPage}
-        />
+          <Route
+            path={`${match.url}/authors/:id`}
+            exact={true}
+            component={ManageAuthorPage}
+          />
+        </Switch>
 
       </div>
     );

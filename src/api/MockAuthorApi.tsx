@@ -16,6 +16,14 @@ class MockAuthorApi {
   public getAll = () => {
     return Promise.resolve(authorsResults);
   }
+
+  public save = (item: any) => {
+    let index = authors.findIndex(element => element.id === item.id);
+    authors[index] = item;
+    return Promise.resolve(item);
+  }
+
+
 }
 
 export { MockAuthorApi };

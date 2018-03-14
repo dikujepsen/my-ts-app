@@ -26,9 +26,9 @@ class BaseStore {
     setItem(ItemId: number) {
 
         this.loadPromise.then(() => {
-            const item = this.items.filter(element => element.id === ItemId);
-            if (item.length) {
-                this.item = item[0];
+            const item = this.items.find(element => element.id === ItemId);
+            if (item) {
+                this.item = item;
             }
             else {
                 this.item = this.defaultItem;
