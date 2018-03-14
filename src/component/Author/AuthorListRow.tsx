@@ -27,7 +27,7 @@ class AuthorListRow extends React.Component<IAuthorListRowProps, any> {
           </button>
         </td>
         <td>
-          <NavLink to={'/authors/' + author.id}>Edit author </NavLink>
+          <NavLink to={'/CourseApp/authors/' + author.id}>Edit author </NavLink>
         </td>
         <td>{author.firstName}</td>
         <td>{author.lastName}</td>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Header } from 'component/common';
 import { Route, withRouter, RouteComponentProps } from 'react-router';
-import { AuthorPage, AuthorForm } from 'component/Author';
+import { AuthorPage, AuthorForm, ManageAuthorPage } from 'component/Author';
 import { Author } from 'interface';
 
 interface ICourseAppProps {
@@ -43,6 +43,12 @@ class CourseApp extends React.Component<ICourseAppProps & RouteComponentProps<an
               errors={errors}
             />
           )}
+        />
+
+        <Route 
+          path={`${match.url}/authors/:id`} 
+          exact={true}
+          component={ManageAuthorPage}
         />
 
       </div>

@@ -21,4 +21,8 @@ class AuthorStore extends BaseStore {
   }
 }
 
-export { AuthorStore };
+const authorStore = new AuthorStore();
+authorStore.setItems();
+
+
+export { authorStore };

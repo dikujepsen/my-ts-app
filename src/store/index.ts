@@ -1,4 +1,4 @@
-import { AuthorStore } from "store/AuthorStore";
+import { authorStore } from "store/AuthorStore";
 
 
-export {AuthorStore};
+export {authorStore};
