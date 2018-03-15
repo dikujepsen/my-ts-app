@@ -9,15 +9,24 @@ import TextInput from '../common/TextInput';
 configure({ adapter: new Adapter() });
 
 describe("test suite 1", () => {
-    
+
     it("should display empty textinputs", () => {
         const manageAuthorPageWrapper = shallow(
             <ManageAuthorPage match={{ params: { id: "add" } }} />
         );
         expect(manageAuthorPageWrapper.find(AuthorForm).dive()
-        .find(TextInput).first().dive().text()).toBe("First name");
+            .find(TextInput).first().dive().text()).toBe("First name");
     });
+    // it("should display filled textinputs", (done) => {
+    //     const manageAuthorPageWrapper = mount(<ManageAuthorPage match={{ params: { id: 1 } }} />);
+    //     setTimeout(() => {
+    //         manageAuthorPageWrapper.update();
+    //         expect(manageAuthorPageWrapper.find(AuthorForm)
+    //             .find(TextInput).first().find("input").first().props().value).toBe("Jens1");
+    //         done();
 
+    //     }, 10);
+    // }, 50);
 });
 
 describe("test suite 2", () => {
@@ -30,11 +39,10 @@ describe("test suite 2", () => {
     });
 
     it("should display filled textinputs", () => {
-        
         manageAuthorPageWrapper.update();
 
         expect(manageAuthorPageWrapper.find(AuthorForm)
-        .find(TextInput).first().find("[name='firstName']").first().props().value).toBe("Jens");
-        
+            .find(TextInput).first().find("input").first().props().value).toBe("Jens");
     });
 });
+
