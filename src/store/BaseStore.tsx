@@ -1,11 +1,12 @@
 import { observable, action, computed } from "mobx";
 import * as toastr from 'toastr';
+import { Author } from "interface";
 
 const DELETE_FAILED = 'DELETE_FAILED';
 
 class BaseStore {
-    defaultItem: { id: number, firstName: string, lastName: string } = { id: 0, firstName: '', lastName: '' };
-    @observable items: { id: number, firstName: string, lastName: string }[] = [];
+    defaultItem: Author = { id: 0, firstName: '', lastName: '' };
+    @observable items: Array<Author> = [];
     @observable item = this.defaultItem;
     loadPromise: any = undefined;
     api: any;
@@ -52,10 +53,10 @@ class BaseStore {
         return promise.then(() => {
             return true;
         })
-            .catch((error: any) => {
-                toastr.error(error);
-                return false;
-            });
+        .catch((error: any) => {
+            toastr.error(error);
+            return false;
+        });
 
     }
 
@@ -66,7 +67,7 @@ class BaseStore {
     }
 
     @action
-    deleteItem(itemId: number) {
+    deleteItem(itemId?: number) {
         let item = this.items.filter(element => element.id === itemId)[0];
 
         this.api.delete(item)

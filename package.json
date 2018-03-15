@@ -66,6 +66,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "ignore-loader": "^0.1.2",
+    "jest-webpack-resolver": "^0.3.0",
     "typescript": "^2.7.2"
   },
   "jest": {
@@ -89,9 +90,6 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
     ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
     "moduleFileExtensions": [
       "mjs",
       "web.ts",
@@ -105,12 +103,17 @@
       "json",
       "node"
     ],
+    "resolver": "jest-webpack-resolver",
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "C:\\Users\\Jacob\\Documents\\Repositories\\starter-kits\\my-ts-app\\tsconfig.test.json"
+        "tsConfigFile": "./tsconfig.test.json"
       }
     }
   },
+  "jestWebpackResolver": {
+    "webpackConfig": "./config/webpack.config.dev.js"
+  },
+
   "babel": {
     "presets": [
       "react-app"

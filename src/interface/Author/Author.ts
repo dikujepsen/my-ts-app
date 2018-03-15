@@ -5,9 +5,10 @@ export class Author {
     @observable lastName: string;
 
     constructor(
-        public id: number,
+        
         firstName: string,
-        lastName: string
+        lastName: string,
+        public id?: number
     ) {
         this.firstName = firstName;
         this.lastName = lastName;

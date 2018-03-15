@@ -4,7 +4,7 @@ import { Author } from "interface";
 
 
 let authors: Array<Author> = [
-  new Author(1, "Jens", "Hansen")
+  new Author("Jens", "Hansen", 1)
 ];
 
 let authorsResults: {results: Array<Author>} = {
@@ -24,7 +24,7 @@ class MockAuthorApi {
   }
 
   public insert = (item: any) => {
-    let maxId = Math.max(...authors.map(element => element.id)) + 1;
+    let maxId = Math.max(...authors.map(element => element.id || 0)) + 1;
     item.id = maxId;
     authors.push(item);
     return Promise.resolve(item);
