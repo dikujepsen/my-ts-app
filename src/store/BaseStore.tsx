@@ -70,7 +70,7 @@ class BaseStore {
     deleteItem(itemId?: number) {
         let item = this.items.filter(element => element.id === itemId)[0];
 
-        this.api.delete(item)
+        return this.api.delete(item)
             .then((success: any) => {
                 if (success) {
                     toastr.success("Course deleted");
