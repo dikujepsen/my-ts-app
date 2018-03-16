@@ -2,10 +2,10 @@ interface RestGetAllResponse<Entity> {
     results: Array<Entity>;
   }
   
-  interface RestApi<Entity> {
+  interface IRestApi<Entity> {
     getAll: () => Promise<RestGetAllResponse<Entity>>;
     save: (item: Entity) => Promise<Entity>;
     insert: (item: Entity) => Promise<Entity>;
-    delete: (item: Entity) => Promise<boolean>;
+    delete: (itemId: number) => Promise<boolean>;
   }
-export { RestApi, RestGetAllResponse };
+export { IRestApi, RestGetAllResponse };

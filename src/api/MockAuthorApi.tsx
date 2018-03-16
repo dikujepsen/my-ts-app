@@ -1,9 +1,9 @@
 import { Author } from "interface";
-import { RestGetAllResponse, RestApi } from "api/IRestApi";
+import { RestGetAllResponse, IRestApi } from "api/IRestApi";
 
 
 
-let mockAuthorApi: RestApi<Author>;
+let mockAuthorApi: IRestApi<Author>;
 if (process.env.NODE_ENV === "development") {
   let authors: Array<Author> = [
     new Author("Jens", "Hansen", 1)
@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "development") {
     results: authors
   };
   
-  class MockAuthorApi implements RestApi<Author> {
+  class MockAuthorApi implements IRestApi<Author> {
   
     public getAll = () => {
       return Promise.resolve(authorsResults);
@@ -32,8 +32,8 @@ if (process.env.NODE_ENV === "development") {
       return Promise.resolve(item);
     }
   
-    public delete = (item: Author) => {
-      authors = authors.filter(element => element.id !== item.id);
+    public delete = (itemId: number) => {
+      authors = authors.filter(element => element.id !== itemId);
       return Promise.resolve(true);
     }
   }
