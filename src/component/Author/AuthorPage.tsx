@@ -34,7 +34,7 @@ class AuthorPage extends React.Component<any, any> {
     }
 
     render() {
-
+        console.log(process.env.NODE_ENV);
         return (
             <div>
                 <Helmet>

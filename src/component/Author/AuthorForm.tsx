@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextInput from '../common/TextInput';
-import {observer} from 'mobx-react';
-import {Author} from "../../interface";
+import { observer } from 'mobx-react';
+import { Author } from "../../interface";
 
 interface IAuthorFormProps {
     author: Author;

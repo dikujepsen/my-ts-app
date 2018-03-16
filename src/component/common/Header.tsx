@@ -25,6 +25,6 @@ class Header extends React.Component<IHeaderProps, any> {
             </nav >
         );
     }
-};
+}
 
 export { Header };

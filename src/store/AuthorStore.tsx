@@ -1,8 +1,7 @@
 import { observable, action, computed } from "mobx";
-import { MockAuthorApi } from 'api/MockAuthorApi';
+import { authorApi } from 'api/MockAuthorApi';
 import { BaseStore } from './BaseStore';
 
-const authorApi = new MockAuthorApi();
 
 class AuthorStore extends BaseStore {
   constructor() {
