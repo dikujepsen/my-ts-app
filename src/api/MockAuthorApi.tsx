@@ -1,21 +1,10 @@
 import { Author } from "interface";
+import { RestGetAllResponse, RestApi } from "api/IRestApi";
 
 
-interface RestGetAllResponse<Entity> {
-  results: Array<Entity>;
-}
 
-interface RestApi<Entity> {
-  getAll: () => Promise<RestGetAllResponse<Entity>>;
-  save: (item: Entity) => Promise<Entity>;
-  insert: (item: Entity) => Promise<Entity>;
-  delete: (item: Entity) => Promise<boolean>;
-}
-
-let authorApi: RestApi<Author>;
-
+let mockAuthorApi: RestApi<Author>;
 if (process.env.NODE_ENV === "development") {
-
   let authors: Array<Author> = [
     new Author("Jens", "Hansen", 1)
   ];
@@ -47,10 +36,9 @@ if (process.env.NODE_ENV === "development") {
       authors = authors.filter(element => element.id !== item.id);
       return Promise.resolve(true);
     }
-  
   }
-
-  authorApi = new MockAuthorApi();
+  mockAuthorApi = new MockAuthorApi();
 }
 
-export { authorApi };
+
+export { mockAuthorApi };
