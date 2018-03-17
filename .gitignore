@@ -26,3 +26,11 @@ yarn-error.log*
 # js files in src
 src/**/*.js
 
+backend/bin/*
+backend/obj/*
+backend/app.db
+backend/sqlite3.exe
+backend/.vscode/*
+backend/React/node_modules/*
+backend/React/dist/*
+backend/wwwroot/React/*
