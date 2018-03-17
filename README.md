@@ -12,3 +12,6 @@
 - TSLint
 - Absolute paths when using import statements
 - Small ASP.NET C# Rest Api backend
+
+## Backend
+To start the backend, open in Visual Studio Code and click 'Start Without Debugging'
