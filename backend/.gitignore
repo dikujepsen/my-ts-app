@@ -1,0 +1,9 @@
+
+bin/*
+obj/*
+app.db
+sqlite3.exe
+.vscode/*
+React/node_modules/*
+React/dist/*
+wwwroot/React/*
