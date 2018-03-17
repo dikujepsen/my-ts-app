@@ -26,3 +26,5 @@ yarn-error.log*
 # js files in src
 src/**/*.js
 
+.vscode/tasks.json
+.vscode/launch.json
