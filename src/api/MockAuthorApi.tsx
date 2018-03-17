@@ -19,8 +19,8 @@ if (process.env.NODE_ENV === "development") {
       return Promise.resolve(authorsResults);
     }
   
-    public save = (item: Author) => {
-      let index = authors.findIndex(element => element.id === item.id);
+    public update = (item: Author, itemId: number) => {
+      let index = authors.findIndex(element => element.id === itemId);
       authors[index] = item;
       return Promise.resolve(item);
     }

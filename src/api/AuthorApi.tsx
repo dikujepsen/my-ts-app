@@ -1,6 +1,6 @@
 import { Author } from "interface";
 import { RestGetAllResponse, IRestApi } from "api/IRestApi";
-import RestApi from "api/RestApi";
+import { RestApi } from "api/RestApi";
 
 
 

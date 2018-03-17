@@ -4,7 +4,7 @@ interface RestGetAllResponse<Entity> {
   
   interface IRestApi<Entity> {
     getAll: () => Promise<RestGetAllResponse<Entity>>;
-    save: (item: Entity) => Promise<Entity>;
+    update: (item: Entity, itemId: number) => Promise<Entity>;
     insert: (item: Entity) => Promise<Entity>;
     delete: (itemId: number) => Promise<boolean>;
   }

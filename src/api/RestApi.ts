@@ -1,7 +1,7 @@
 
 import * as axios from 'axios';
 import { observable, action, computed, autorun } from "mobx";
-import { IRestApi } from 'api/IRestApi';
+import { IRestApi, RestGetAllResponse } from 'api/IRestApi';
 
 class RestApi<Entity> implements IRestApi<Entity> {
   @observable csrftoken = "";
@@ -16,7 +16,7 @@ class RestApi<Entity> implements IRestApi<Entity> {
   }
 
 
-  getAll() {
+  getAll(): Promise<RestGetAllResponse<Entity>> {
     let fetchUrl = this.listAction;
     return this.axios.get(fetchUrl)
       .then((response: any) => {
@@ -25,14 +25,15 @@ class RestApi<Entity> implements IRestApi<Entity> {
   }
 
 
-  save(data: any) {
-    return this.axios.put(data.url, data)
+  update(data: Entity, itemId: number): Promise<Entity> {
+    const url = this.listAction + itemId;
+    return this.axios.put(url, data)
       .then((response: any) => {
         return response.data;
       });
   }
 
-  insert(data: any) {
+  insert(data: Entity): Promise<Entity> {
     return this.axios.post(this.listAction, data)
       .then((response: any) => {
         return response.data;
@@ -40,7 +41,7 @@ class RestApi<Entity> implements IRestApi<Entity> {
   }
 
   delete(itemId: number) {
-    const url = this.listAction + "/" + itemId;
+    const url = this.listAction + itemId;
     return this.axios.delete(url)
       .then((response: any) => {
         return (response.status >= 200 && response.status < 300) || response.status === 404;
@@ -84,4 +85,4 @@ class RestApi<Entity> implements IRestApi<Entity> {
 }
 
 
-export default RestApi;
+export { RestApi };

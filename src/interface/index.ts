@@ -1,3 +1,4 @@
 import { Author } from "./Author/Author";
+import { IRestEntity } from "interface/IRestEntity";
 
-export { Author };
+export { Author, IRestEntity };
