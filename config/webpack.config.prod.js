@@ -13,6 +13,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const AutoDllPlugin = require('autodll-webpack-plugin');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -261,6 +262,31 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       },
+    }),
+    new AutoDllPlugin({
+      inject: true, // will inject the DLL bundle to index.html
+      debug: true,
+      filename: '[name]_[hash].js',
+      path: './dll',
+      context: path.join(__dirname, '..'),
+      entry: {
+        vendor: [
+          'react',
+          'react-dom',
+          'jquery',
+          'mobx',
+          'history',
+          'react-router',
+          'react-helmet',
+          'mobx-react',
+          'react-dom/server',
+          'axios',
+          'toastr',
+          'react-router-dom',
+          'whatwg-fetch',
+          'promise'
+        ]
+      }
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
