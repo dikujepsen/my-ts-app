@@ -34,3 +34,5 @@ backend/.vscode/*
 backend/React/node_modules/*
 backend/React/dist/*
 backend/wwwroot/React/*
+.vscode/tasks.json
+.vscode/launch.json
